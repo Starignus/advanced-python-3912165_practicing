@@ -3,6 +3,12 @@
 
 
 def myFunction(arg1, arg2=None):
+    """
+    Docstring for myFunction
+    
+    :param arg1: Description
+    :param arg2: Description
+    """
     print(arg1, arg2)
 
 
