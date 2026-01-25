@@ -29,6 +29,11 @@ dict: A dictionary that contains information about the string. The dictionary wi
 	• "Found" indicates whether the search_term was found, regardless of case.
 	• "Index" is the index where the term was found, or -1 if not found. If there is more than one instance of the search term, return the index of the first occurrence starting from the beginning of the string.
 
+    
+    Some documentation that may help you:
+    https://docs.python.org/3/library/stdtypes.html#string-methods
+    https://docs.python.org/3/library/string.html#grammar-token-format-string-index_string
+    
 """
 
 import string
@@ -47,7 +52,8 @@ def process_string(the_str, search_term):
     whitespace_count = sum(1 for space in the_str if space in string.whitespace)
     uppercase_count = sum(1 for upper in the_str if upper.isupper())
     lowercase_count = sum(1 for lower in the_str if lower.islower())
-    if search_term.lower() in the_str.lower():
+    # I prefer this way of checking for existence instead of using find() method
+    if search_term.lower() in the_str.lower(): 
         found = True
         # Find the index of the first occurrence, case insensitive
         index = the_str.lower().index(search_term.lower())
